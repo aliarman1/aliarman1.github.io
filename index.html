@@ -6,131 +6,279 @@
     <title>Md. Ali Arman - Personal Webpage</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --navy-blue: #1e3a5f;
+            --dark-gray: #2c3e50;
+            --muted-teal: #4a9b9b;
+            --light-teal: #6bb5b5;
+            --cream: #f8f6f0;
+            --white: #ffffff;
+            --text-dark: #2c3e50;
+            --text-light: #5a6c7d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
+            line-height: 1.8;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: var(--cream);
+            color: var(--text-dark);
         }
+        
         .container {
-            width: 80%;
-            margin: auto;
+            max-width: 1200px;
+            margin: 0 auto;
             overflow: hidden;
-            padding: 2em 0;
+            padding: 0 20px;
         }
+        
+        .content.container {
+            margin: 30px auto;
+        }
+        
         header {
-            background: #444;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #66cc66 3px solid;
+            background: linear-gradient(135deg, var(--navy-blue) 0%, var(--dark-gray) 100%);
+            color: var(--white);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
         }
-        header ul {
-            padding: 0;
-            list-style: none;
-        }
-        header li {
-            float: left;
-            display: inline;
-            padding: 0 20px 0 20px;
-        }
-        header #branding {
-            float: left;
-        }
+        
         header #branding h1 {
             margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
-        header nav {
-            float: right;
-            margin-top: 10px;
-        }
+        
         header nav ul {
-            float: right;
-            margin-top: 10px;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
         }
+        
+        header nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
         header nav ul li a:hover {
-            color: #66cc66;
+            color: var(--light-teal);
         }
+        
+        header nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--muted-teal);
+            transition: width 0.3s ease;
+        }
+        
+        header nav ul li a:hover::after {
+            width: 100%;
+        }
+        
         section#showcase {
-            min-height: 400px;
-            background-color: #444;
-            color: #fff;
+            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--navy-blue) 100%);
+            color: var(--white);
             text-align: center;
-            padding: 150px 20px;
+            padding: 120px 20px;
+            position: relative;
+            overflow: hidden;
         }
+        
+        section#showcase::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(74, 155, 155, 0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.3;
+        }
+        
         section#showcase h1 {
             margin-top: 0;
-            font-size: 55px;
+            font-size: 52px;
+            font-weight: 700;
             letter-spacing: 2px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
         }
+        
         section#showcase p {
             font-size: 20px;
-            margin-top: 20px;
+            margin-top: 15px;
+            color: var(--light-teal);
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
         }
+        
         .content {
-            padding: 20px;
-            background: #fff;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 40px;
+            background: var(--white);
+            margin: 30px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        
+        .content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        
         .content h2 {
-            color: #444;
-            border-bottom: 2px solid #66cc66;
-            padding-bottom: 10px;
+            color: var(--navy-blue);
+            border-bottom: 3px solid var(--muted-teal);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
+        
         .content ul {
             list-style-type: none;
             padding: 0;
         }
+        
         .content ul li {
-            background: #f9f9f9;
-            margin: 5px 0;
-            padding: 10px;
-            border-left: 5px solid #66cc66;
-            border-radius: 5px;
+            background: var(--cream);
+            margin: 15px 0;
+            padding: 20px;
+            border-left: 5px solid var(--muted-teal);
+            border-radius: 8px;
+            transition: all 0.3s ease;
         }
+        
+        .content ul li:hover {
+            background: #f0ede3;
+            border-left-color: var(--navy-blue);
+            transform: translateX(5px);
+        }
+        
         .content ul li strong {
             display: block;
-            color: #444;
+            color: var(--navy-blue);
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
         }
+        
         .content p {
-            margin: 10px 0;
+            margin: 15px 0;
+            color: var(--text-light);
+            line-height: 1.8;
         }
+        
         .content a {
-            color: #66cc66;
+            color: var(--muted-teal);
             text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
+        
         .content a:hover {
+            color: var(--navy-blue);
             text-decoration: underline;
         }
+        
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            margin: 0 auto;
+            margin: 20px auto;
             display: block;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.3);
+            border: 5px solid var(--muted-teal);
+            transition: transform 0.3s ease;
         }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+        
         footer {
-            background: #444;
-            color: #fff;
+            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--navy-blue) 100%);
+            color: var(--white);
             text-align: center;
-            padding: 20px;
-            margin-top: 20px;
-            border-top: #66cc66 3px solid;
+            padding: 30px 20px;
+            margin-top: 50px;
+            border-top: 4px solid var(--muted-teal);
         }
+        
+        footer p {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        
         .content .project-details {
-            margin-top: 10px;
+            margin-top: 12px;
+            color: var(--text-light);
+            line-height: 1.9;
+            font-size: 15px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            header nav ul {
+                margin-top: 15px;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            section#showcase h1 {
+                font-size: 36px;
+            }
+            
+            section#showcase p {
+                font-size: 16px;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+            
+            .content h2 {
+                font-size: 26px;
+            }
         }
     </style>
 </head>
@@ -143,9 +291,11 @@
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#education">Education</a></li>
                     <li><a href="#work">Work</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -154,15 +304,17 @@
     
     <section id="showcase">
         <div class="container">
-            <h1>Welcome to My Personal Webpage</h1>
-            <p>Aspiring IT professional with a passion for programming and technology.</p>
+            <h1>Md. Ali Arman</h1>
+            <p>Software Engineer | Full-Stack Developer | ERP & System Integration Specialist</p>
         </div>
     </section>
     
     <section id="about" class="container content">
-        <h2>About Me</h2>
+        <h2>Career Summary</h2>
         <img src="https://raw.githubusercontent.com/aliarman1/aliarman1.github.io/main/mdaliarman.jpg" alt="Md. Ali Arman" class="profile-img">
-        <p>I am an enthusiastic IT professional dedicated to leveraging my technical, programming, and management skills to drive organizational success. I am committed to continuous learning and staying abreast of emerging trends in the IT sector. I seek to contribute to a dynamic team where I can apply my expertise and passion for technology to solve complex challenges and foster innovation.</p>
+        <p>Software Engineer with 1.5+ years of experience specializing in ERP, POS, HRM, and asset management systems. Expertise in Laravel, React.js, Flutter, Kotlin, and secure API integration.</p>
+        <p>Developed and deployed full-featured ERP systems with advanced inventory, sales, and accounting management. Integrated biometric (ZKTeco) and RFID devices for attendance and asset tracking.</p>
+        <p>Built mobile applications with seamless backend connectivity and secure authentication. Leveraged AI-assisted development tools for faster coding, automation, and high-quality software delivery.</p>
     </section>
     
     <section id="education" class="container content">
@@ -190,25 +342,73 @@
     </section>
     
     <section id="work" class="container content">
-        <h2>Work History</h2>
-        <p><strong>Executive IT</strong> at Sure International, Dhaka, Bangladesh (April 2024 – June 2024)</p>
-        <p><strong>Software Engineer</strong> at Shajgoj, Dhaka, Bangladesh (June 2024 – Present)</p>
-    </section>
-    
-    <section id="achievements" class="container content">
-        <h2>Achievements</h2>
+        <h2>Work Experience</h2>
         <ul>
-            <li>Got ‘Intra University Programming Winner’ from BAUST (2023)</li>
-            <li>Successfully completed Cyber Security Course from JIT institution (2020)</li>
+            <li>
+                <strong>Software Engineer</strong> - Mellowhost, Dhaka, Bangladesh (Oct 2024 – Present)
+                <p class="project-details">
+                    • Develop and maintain ERP, POS, HRM, and Fixed Asset Management systems using Laravel, React, Kotlin, and Flutter.<br>
+                    • Integrate hardware and software solutions, including RFID devices, with ERP and mobile applications via secure APIs.<br>
+                    • Successfully delivered a full-featured ERP with advanced inventory, sales, and accounting management optimized for big data.
+                </p>
+            </li>
+            <li>
+                <strong>Software Engineer - Engineer I</strong> - Shajgoj Limited, Dhaka, Bangladesh (Jun 2024 – Oct 2024)
+                <p class="project-details">
+                    • Integrated ZKTeco biometric devices with Odoo for attendance tracking.<br>
+                    • Developed automated attendance and reporting systems.<br>
+                    • Streamlined attendance management and reduced manual report preparation time significantly.
+                </p>
+            </li>
+            <li>
+                <strong>IT Executive</strong> - Sure International, Dhaka, Bangladesh (Apr 2024 – May 2024)
+                <p class="project-details">
+                    • Designed and implemented IT solutions for attendance and payroll management.<br>
+                    • Successfully developed a biometric-enabled attendance and payroll system.
+                </p>
+            </li>
         </ul>
     </section>
     
     <section id="skills" class="container content">
-        <h2>Skills</h2>
+        <h2>Key Proficiencies</h2>
         <ul>
-            <li>Languages: Bangla (Native), English (Intermediate), Hindi (Intermediate)</li>
-            <li>Technical Skills: Proficient in Computer OS setup, Troubleshooting modern devices, Microsoft Office.</li>
-            <li>Programming Languages: C/C++, Python, Java, PHP, HTML, MySQL, XML</li>
+            <li>Custom ERP & System Development (Inventory, Accounting, Payroll, HRM, POS)</li>
+            <li>Biometric & RFID Integration (ZKTeco)</li>
+            <li>Mobile App Development (Flutter, Kotlin, API Integration)</li>
+            <li>Web Development (Laravel, React.js, PHP, JavaScript, MySQL)</li>
+            <li>RESTful API Design & Integration</li>
+            <li>AI-assisted Coding & Automation (Cursor, Windsurf, Claude Code, Codex CLI)</li>
+            <li>Linux Server Management & Deployment</li>
+            <li>Git/GitHub Version Control</li>
+            <li>Data Optimization & Report Automation</li>
+            <li>Authentication & Security Implementation (Laravel Sanctum)</li>
+        </ul>
+    </section>
+
+    <section id="certifications" class="container content">
+        <h2>Professional Certifications</h2>
+        <ul>
+            <li><strong>Python Programming Training</strong> - Johnson IT Institute (Jan 2021 - Jun 2021)</li>
+            <li><strong>Cisco Certified Network Associate (CCNA)</strong> - eShikhon.com (Jun 2021 - Dec 2021)</li>
+        </ul>
+    </section>
+    
+    <section id="achievements" class="container content">
+        <h2>Recognition & Achievements</h2>
+        <ul>
+            <li><strong>Champion</strong> - ROBAUST Intra University Robotics Contest, Senior Level Programming Contest (2023)</li>
+            <li><strong>Runners-Up</strong> - Intra University Programming Contest, ICPC Selection Round (2021)</li>
+            <li><strong>Champion</strong> - Marathon Contest BAUST 10th Batch, COVID-19 Vacation (2020)</li>
+            <li><strong>Vice-President</strong> - BAUST Programming Club (2022 – 2023)</li>
+        </ul>
+    </section>
+
+    <section id="languages" class="container content">
+        <h2>Languages</h2>
+        <ul>
+            <li><strong>Bengali:</strong> Native / Fluent</li>
+            <li><strong>English:</strong> Fluent</li>
         </ul>
     </section>
     
@@ -256,13 +456,15 @@
     <section id="contact" class="container content">
         <h2>Contact Information</h2>
         <p>Email: <a href="mailto:aliarman45039@gmail.com">aliarman45039@gmail.com</a></p>
-        <p>Phone: 017744-06256</p>
-        <p>Location: Uttara, Dhaka</p>
+        <p>Phone: (+88) 01774406256 (WhatsApp)</p>
+        <p>Location: Kuril, Dhaka, Bangladesh</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/mdaliarman12/" target="_blank">linkedin.com/in/mdaliarman12</a></p>
         <p>GitHub: <a href="https://github.com/aliarman1" target="_blank">github.com/aliarman1</a></p>
+        <p>Facebook: <a href="https://www.facebook.com/mdaliarman01/" target="_blank">facebook.com/mdaliarman01</a></p>
     </section>
     
     <footer>
-        <p>Md. Ali Arman &copy; 2024</p>
+        <p>MD Ali Arman &copy; 2025</p>
     </footer>
 </body>
 </html>
