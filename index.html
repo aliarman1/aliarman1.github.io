@@ -3,326 +3,737 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Md. Ali Arman - Personal Webpage</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Md. Ali Arman - Software Engineer</title>
+    <meta name="description" content="Software Engineer specializing in ERP, POS, HRM, and system integration. Full-Stack Developer with expertise in Laravel, React.js, Flutter, and Kotlin.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --navy-blue: #1e3a5f;
-            --dark-gray: #2c3e50;
-            --muted-teal: #4a9b9b;
-            --light-teal: #6bb5b5;
-            --cream: #f8f6f0;
-            --white: #ffffff;
-            --text-dark: #2c3e50;
-            --text-light: #5a6c7d;
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent: #06b6d4;
+            --accent-light: #22d3ee;
+            --accent-dark: #0891b2;
+            --surface: #ffffff;
+            --surface-alt: #f8fafc;
+            --surface-elevated: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --radius: 12px;
+            --radius-lg: 16px;
+            --transition: all 0.2s ease;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.8;
-            margin: 0;
-            padding: 0;
-            background-color: var(--cream);
-            color: var(--text-dark);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0f9ff 100%);
+            min-height: 100vh;
         }
-        
+
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            overflow: hidden;
-            padding: 0 20px;
+            padding: 0 24px;
         }
-        
-        .content.container {
-            margin: 30px auto;
-        }
-        
+
+        /* Header */
         header {
-            background: linear-gradient(135deg, var(--navy-blue) 0%, var(--dark-gray) 100%);
-            color: var(--white);
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+            color: white;
+            padding: 16px 0;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 1000;
+            box-shadow: var(--shadow-lg);
         }
-        
+
         header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
-        
+
         header #branding h1 {
-            margin: 0;
-            font-size: 28px;
+            font-size: 22px;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #fff 0%, #22d3ee 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        
+
         header nav ul {
             list-style: none;
             display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
+            gap:px;
+            flex 8-wrap: wrap;
+            justify-content: center;
         }
-        
+
         header nav ul li a {
-            color: var(--white);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
+            padding: 8px 14px;
+            border-radius: 8px;
+            transition: var(--transition);
+            display: block;
         }
-        
+
         header nav ul li a:hover {
-            color: var(--light-teal);
+            color: white;
+            background: rgba(6, 182, 212, 0.2);
         }
-        
-        header nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--muted-teal);
-            transition: width 0.3s ease;
+
+        header nav ul li a:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
         }
-        
-        header nav ul li a:hover::after {
-            width: 100%;
-        }
-        
-        section#showcase {
-            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--navy-blue) 100%);
-            color: var(--white);
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #334155 100%);
+            color: white;
             text-align: center;
-            padding: 120px 20px;
+            padding: 160px 24px 100px;
             position: relative;
             overflow: hidden;
         }
-        
-        section#showcase::before {
+
+        #hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(74, 155, 155, 0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
-            background-size: cover;
-            opacity: 0.3;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2306b6d4' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
         }
-        
-        section#showcase h1 {
-            margin-top: 0;
-            font-size: 52px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
+
+        #hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, var(--surface), transparent);
+        }
+
+        #hero .container {
             position: relative;
             z-index: 1;
         }
-        
-        section#showcase p {
+
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(36px, 6vw, 56px);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content .tagline {
             font-size: 20px;
-            margin-top: 15px;
-            color: var(--light-teal);
-            font-weight: 300;
-            position: relative;
-            z-index: 1;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 400;
+            margin-bottom: 32px;
         }
-        
-        .content {
-            padding: 40px;
-            background: var(--white);
-            margin: 30px 0;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
-        
-        .content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-        
-        .content h2 {
-            color: var(--navy-blue);
-            border-bottom: 3px solid var(--muted-teal);
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-        }
-        
-        .content ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        .content ul li {
-            background: var(--cream);
-            margin: 15px 0;
-            padding: 20px;
-            border-left: 5px solid var(--muted-teal);
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-        
-        .content ul li:hover {
-            background: #f0ede3;
-            border-left-color: var(--navy-blue);
-            transform: translateX(5px);
-        }
-        
-        .content ul li strong {
-            display: block;
-            color: var(--navy-blue);
-            font-size: 18px;
+
+        .hero-cta a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 10px;
             font-weight: 600;
-            margin-bottom: 8px;
-        }
-        
-        .content p {
-            margin: 15px 0;
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-        
-        .content a {
-            color: var(--muted-teal);
+            font-size: 15px;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            transition: var(--transition);
         }
-        
-        .content a:hover {
-            color: var(--navy-blue);
-            text-decoration: underline;
+
+        .hero-cta .primary {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: white;
+            box-shadow: 0 4px 14px rgba(6, 182, 212, 0.4);
         }
-        
+
+        .hero-cta .primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(6, 182, 212, 0.5);
+        }
+
+        .hero-cta .secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-cta .secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+
+        /* Section Styles */
+        .section {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            margin-bottom: 32px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .section:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .section-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.5px;
+        }
+
+        /* About Section */
+        #about {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .profile-wrapper {
+            text-align: center;
+        }
+
         .profile-img {
             width: 180px;
             height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            margin: 20px auto;
-            display: block;
-            box-shadow: 0 8px 30px rgba(30, 58, 95, 0.3);
-            border: 5px solid var(--muted-teal);
-            transition: transform 0.3s ease;
+            box-shadow: 0 0 0 4px white, 0 0 0 6px var(--accent), var(--shadow-xl);
+            transition: var(--transition);
         }
-        
+
         .profile-img:hover {
             transform: scale(1.05);
+            box-shadow: 0 0 0 4px white, 0 0 0 8px var(--accent-light), var(--shadow-xl);
         }
-        
-        footer {
-            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--navy-blue) 100%);
-            color: var(--white);
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 50px;
-            border-top: 4px solid var(--muted-teal);
+
+        .about-content p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 1.7;
         }
-        
-        footer p {
-            margin: 0;
+
+        .about-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 32px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), var(--accent-light));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 32px;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-item h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .timeline-item .company {
+            color: var(--accent-dark);
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .timeline-item .period {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .timeline-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline-item ul li {
+            color: var(--text-secondary);
             font-size: 15px;
-            font-weight: 300;
-            letter-spacing: 0.5px;
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
         }
-        
-        .content .project-details {
+
+        .timeline-item ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .skill-card {
+            background: var(--surface-alt);
+            padding: 20px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .skill-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .skill-card h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-card h3::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .skill-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%);
+            color: var(--accent-dark);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.2) 0%, rgba(6, 182, 212, 0.1) 100%);
+            transform: translateY(-1px);
+        }
+
+        /* Education Cards */
+        .edu-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .edu-card {
+            background: var(--surface-alt);
+            padding: 24px;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--accent);
+            transition: var(--transition);
+        }
+
+        .edu-card:hover {
+            border-left-color: var(--accent-light);
+            transform: translateX(4px);
+        }
+
+        .edu-card h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .edu-card .institution {
+            color: var(--accent-dark);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .edu-card .details {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .edu-card .thesis {
             margin-top: 12px;
-            color: var(--text-light);
-            line-height: 1.9;
-            font-size: 15px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-style: italic;
         }
-        
-        /* Scroll to Top Button */
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .project-card {
+            background: var(--surface-alt);
+            padding: 24px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .project-card .year {
+            display: inline-block;
+            padding: 4px 10px;
+            background: var(--accent);
+            color: white;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .project-card .tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .project-card .tool {
+            padding: 4px 10px;
+            background: var(--primary);
+            color: white;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .project-card p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            background: var(--surface-alt);
+            border-radius: var(--radius);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%);
+            transform: translateY(-2px);
+        }
+
+        .contact-item .icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-item .info .label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .contact-item .info .value {
+            font-size: 15px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px 24px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        footer .social {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        footer .social a {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        footer .social a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* Scroll to Top */
         #scrollToTop {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background-color: var(--muted-teal);
-            color: var(--white);
             width: 50px;
             height: 50px;
-            border-radius: 50%;
+            background: var(--accent);
+            color: white;
             border: none;
+            border-radius: 50%;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: var(--shadow-lg);
             display: none;
             align-items: center;
             justify-content: center;
             z-index: 999;
-            transition: all 0.3s ease;
+            transition: var(--transition);
         }
-        
+
         #scrollToTop:hover {
-            background-color: var(--light-teal);
+            background: var(--accent-dark);
             transform: scale(1.1);
         }
-        
+
         #scrollToTop.show {
             display: flex;
         }
-        
-        #scrollToTop svg {
-            width: 24px;
-            height: 24px;
-        }
 
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
             header .container {
                 flex-direction: column;
-                text-align: center;
+                gap: 16px;
             }
-            
+
             header nav ul {
-                margin-top: 15px;
-                justify-content: center;
-                gap: 15px;
+                gap: 4px;
             }
-            
-            section#showcase h1 {
-                font-size: 36px;
+
+            header nav ul li a {
+                padding: 6px 10px;
+                font-size: 13px;
             }
-            
-            section#showcase p {
+
+            #hero {
+                padding: 140px 20px 80px;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .hero-content .tagline {
                 font-size: 16px;
             }
-            
-            .content {
-                padding: 25px;
+
+            .section {
+                padding: 28px;
             }
-            
-            .content h2 {
-                font-size: 26px;
+
+            #about {
+                grid-template-columns: 1fr;
             }
-            
-            #scrollToTop {
-                bottom: 20px;
-                right: 20px;
-                width: 45px;
-                height: 45px;
+
+            .profile-wrapper {
+                order: -1;
+            }
+
+            .profile-img {
+                width: 140px;
+                height: 140px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
@@ -336,226 +747,377 @@
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#work">Work</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#achievements">Achievements</a></li>
-                    <li><a href="#soft-skills">Soft Skills</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    
-    <section id="showcase">
+
+    <section id="hero">
         <div class="container">
-            <h1>Md. Ali Arman</h1>
-            <p>Software Engineer | Full-Stack Developer | ERP & System Integration Specialist</p>
+            <div class="hero-content">
+                <h1>Hi, I'm <span>Md. Ali Arman</span></h1>
+                <p class="tagline">Software Engineer | Full-Stack Developer | ERP & System Integration Specialist</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="primary">Get In Touch</a>
+                    <a href="#projects" class="secondary">View Projects</a>
+                </div>
+            </div>
         </div>
     </section>
-    
-    <section id="about" class="container content">
-        <h2>Career Summary</h2>
-        <img src="https://raw.githubusercontent.com/aliarman1/aliarman1.github.io/main/mdaliarman.jpg" alt="Md. Ali Arman" class="profile-img">
-        <p>Software Engineer with 2+ years of experience specializing in ERP, POS, HRM, and asset management systems. Expertise in Laravel, React.js, Flutter, Kotlin, and secure API integration.</p>
-        <p>Developed and deployed full-featured ERP systems with advanced inventory, sales, and accounting management. Integrated biometric (ZKTeco) and RFID devices for attendance and asset tracking.</p>
-        <p>Built mobile applications with seamless backend connectivity and secure authentication. Leveraged AI-assisted development tools for faster coding, automation, and high-quality software delivery.</p>
-    </section>
-    
-    <section id="education" class="container content">
-        <h2>Education</h2>
-        <ul>
-            <li>
-                <strong>B.Sc. in Computer Science and Engineering</strong><br>
-                Bangladesh Army University of Science Technology, Saidpur, Rangpur<br>
-                CGPA: 3.55/4.00 (2019-2023)<br>
-                Thesis: Psychological Characteristic Disorder Classification (ML model to analyze and classify psychological disorders based on professional and geographical factors)
-            </li>
-            <li>
-                <strong>Higher Secondary Certificate</strong><br>
-                Police Lines School and College, Rangpur, Bangladesh<br>
-                GPA: 5.00/5.00 (2017-2019)<br>
-                Subjects: Science
-            </li>
-            <li>
-                <strong>Secondary School Certificate</strong><br>
-                Domar Multilateral High School, Domar, Nilphamari, Rangpur<br>
-                GPA: 5.00/5.00 (2016-2017)<br>
-                Subjects: Science
-            </li>
-        </ul>
-    </section>
-    
-    <section id="work" class="container content">
-        <h2>Work Experience</h2>
-        <ul>
-            <li>
-                <strong>Software Engineer</strong> - ACI PLC, Dhaka, Bangladesh (Jan 2026 – Present)
-                <p class="project-details">
-                    • Developing and maintaining enterprise software solutions using Laravel, React.js, and Flutter<br>
-                    • Integrating ERP systems with hardware devices and third-party APIs<br>
-                    • Optimizing database performance and implementing security best practices
-                </p>
-            </li>
-            <li>
-                <strong>Software Engineer</strong> - Mellowhost, Dhaka, Bangladesh (Oct 2024 – Dec 2025)
-                <p class="project-details">
-                    • Develop and maintain ERP, POS, HRM, and Fixed Asset Management systems using Laravel, React, Kotlin, and Flutter.<br>
-                    • Integrate hardware and software solutions, including RFID devices, with ERP and mobile applications via secure APIs.<br>
-                    • Successfully delivered a full-featured ERP with advanced inventory, sales, and accounting management optimized for big data.
-                </p>
-            </li>
-            <li>
-                <strong>Software Engineer - Engineer I</strong> - Shajgoj Limited, Dhaka, Bangladesh (Jun 2024 – Oct 2024)
-                <p class="project-details">
-                    • Integrated ZKTeco biometric devices with Odoo for attendance tracking.<br>
-                    • Developed automated attendance and reporting systems.<br>
-                    • Streamlined attendance management and reduced manual report preparation time significantly.
-                </p>
-            </li>
-            <li>
-                <strong>IT Executive</strong> - Sure International, Dhaka, Bangladesh (Apr 2024 – May 2024)
-                <p class="project-details">
-                    • Designed and implemented IT solutions for attendance and payroll management.<br>
-                    • Successfully developed a biometric-enabled attendance and payroll system.
-                </p>
-            </li>
-        </ul>
-    </section>
-    
-    <section id="skills" class="container content">
-        <h2>Key Proficiencies</h2>
-        <ul>
-            <li>Custom ERP & System Development (Inventory, Accounting, Payroll, HRM, POS)</li>
-            <li>Biometric & RFID Integration (ZKTeco)</li>
-            <li>Mobile App Development (Flutter, Kotlin, API Integration)</li>
-            <li>Web Development (Laravel, React.js, PHP, JavaScript, MySQL)</li>
-            <li>RESTful API Design & Integration</li>
-            <li>AI-assisted Coding & Automation (Cursor, Windsurf, Claude Code, Codex CLI)</li>
-            <li>Linux Server Management & Deployment</li>
-            <li>Git/GitHub Version Control</li>
-            <li>Data Optimization & Report Automation</li>
-            <li>Authentication & Security Implementation (Laravel Sanctum)</li>
-        </ul>
-    </section>
 
-    <section id="certifications" class="container content">
-        <h2>Professional Certifications</h2>
-        <ul>
-            <li><strong>Python Programming Training</strong> - Johnson IT Institute (Jan 2021 - Jun 2021)</li>
-            <li><strong>Cisco Certified Network Associate (CCNA)</strong> - eShikhon.com (Jun 2021 - Dec 2021)</li>
-        </ul>
-    </section>
-    
-    <section id="achievements" class="container content">
-        <h2>Recognition & Achievements</h2>
-        <ul>
-            <li><strong>Champion</strong> - ROBAUST Intra University Robotics Contest, Senior Level Programming Contest (2023)</li>
-            <li><strong>Runners-Up</strong> - Intra University Programming Contest, ICPC Selection Round (2021)</li>
-            <li><strong>Champion</strong> - Marathon Contest BAUST 10th Batch, COVID-19 Vacation (2020)</li>
-            <li><strong>Vice-President</strong> - BAUST Programming Club (2022 – 2023)</li>
-        </ul>
-    </section>
+    <main>
+        <div class="container">
+            <!-- About Section -->
+            <section id="about" class="section">
+                <div class="profile-wrapper">
+                    <img src="https://raw.githubusercontent.com/aliarman1/aliarman1.github.io/main/mdaliarman.jpg" alt="Md. Ali Arman" class="profile-img">
+                </div>
+                <div class="about-content">
+                    <h2>About Me</h2>
+                    <p>Software Engineer with 2+ years of experience specializing in ERP, POS, HRM, and asset management systems. Expertise in Laravel, React.js, Flutter, Kotlin, and secure API integration.</p>
+                    <p>Developed and deployed full-featured ERP systems with advanced inventory, sales, and accounting management. Integrated biometric (ZKTeco) and RFID devices for attendance and asset tracking.</p>
+                    <p>Built mobile applications with seamless backend connectivity and secure authentication. Leveraged AI-assisted development tools for faster coding, automation, and high-quality software delivery.</p>
+                </div>
+            </section>
 
-    <section id="languages" class="container content">
-        <h2>Languages</h2>
-        <ul>
-            <li><strong>Bengali:</strong> Native / Fluent</li>
-            <li><strong>English:</strong> Fluent</li>
-        </ul>
-    </section>
+            <!-- Experience Section -->
+            <section id="experience" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <h2>Work Experience</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Software Engineer</h3>
+                        <div class="company">ACI PLC, Dhaka, Bangladesh</div>
+                        <div class="period">Jan 2026 – Present</div>
+                        <ul>
+                            <li>Developing and maintaining enterprise software solutions using Laravel, React.js, and Flutter</li>
+                            <li>Integrating ERP systems with hardware devices and third-party APIs</li>
+                            <li>Optimizing database performance and implementing security best practices</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Software Engineer</h3>
+                        <div class="company">Mellowhost, Dhaka, Bangladesh</div>
+                        <div class="period">Oct 2024 – Dec 2025</div>
+                        <ul>
+                            <li>Develop and maintain ERP, POS, HRM, and Fixed Asset Management systems</li>
+                            <li>Integrate hardware and software solutions, including RFID devices</li>
+                            <li>Delivered a full-featured ERP with advanced inventory, sales, and accounting management</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Software Engineer - Engineer I</h3>
+                        <div class="company">Shajgoj Limited, Dhaka, Bangladesh</div>
+                        <div class="period">Jun 2024 – Oct 2024</div>
+                        <ul>
+                            <li>Integrated ZKTeco biometric devices with Odoo for attendance tracking</li>
+                            <li>Developed automated attendance and reporting systems</li>
+                            <li>Streamlined attendance management and reduced manual report preparation time</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>IT Executive</h3>
+                        <div class="company">Sure International, Dhaka, Bangladesh</div>
+                        <div class="period">Apr 2024 – May 2024</div>
+                        <ul>
+                            <li>Designed and implemented IT solutions for attendance and payroll management</li>
+                            <li>Developed a biometric-enabled attendance and payroll system</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-    <section id="soft-skills" class="container content">
-        <h2>Soft Skills</h2>
-        <ul>
-            <li>Communication</li>
-            <li>Teamwork</li>
-            <li>Leadership</li>
-            <li>Time Management</li>
-            <li>Problem Solving</li>
-            <li>Attention to Detail</li>
-            <li>Adaptability</li>
-            <li>Fast Learning</li>
-            <li>Customer Service</li>
-            <li>Coordination</li>
-        </ul>
-    </section>
-    
-    <section id="projects" class="container content">
-        <h2>Projects</h2>
-        <ul>
-            <li>
-                <strong>Psychological Characteristic Disorder Classification (Thesis)</strong> (2023)
-                <p class="project-details">
-                    Tools: Python, Machine Learning, NLP, Jupyter Notebook<br>
-                    Description: ML model to analyze and classify psychological disorders based on professional and geographical factors.
-                </p>
-            </li>
-            <li>
-                <strong>AI Generated Content Prediction using NLP</strong> (July 2023 - Oct 2023)
-                <p class="project-details">
-                    Tools: Jupyter Notebook, Python<br>
-                    Description: Developed a machine learning model to predict AI-generated content using natural language processing techniques. Implemented and trained the model using various datasets to enhance prediction accuracy.
-                </p>
-            </li>
-            <li>
-                <strong>Handwritten Digit Detection</strong> (Jan 2023 - Apr 2023)
-                <p class="project-details">
-                    Tools: Jupyter, Python, Matplotlib, Keras models<br>
-                    Description: Created a neural network model to recognize handwritten digits. Utilized Keras and TensorFlow to build and train the model, achieving a high accuracy rate in digit recognition tasks.
-                </p>
-            </li>
-            <li>
-                <strong>Hotel Booking System</strong> (July 2022 - Oct 2022)
-                <p class="project-details">
-                    Tools: HTML, PHP, MySQL, CSS, JavaScript<br>
-                    Description: Developed a full-stack web application for hotel bookings. The system included user authentication, room management, and booking functionalities, providing a seamless user experience.
-                </p>
-            </li>
-            <li>
-                <strong>Education Bank</strong> (Jan 2022 - May 2022)
-                <p class="project-details">
-                    Tools: Android Studio, Java, XML, MySQL, Eclipse<br>
-                    Description: Designed and implemented an Android application to manage educational resources. The app allowed users to upload, download, and share study materials, fostering a collaborative learning environment.
-                </p>
-            </li>
-            <li>
-                <strong>Car Rent Management</strong> (July 2021 - Nov 2021)
-                <p class="project-details">
-                    Tools: PHP, MySQL, CSS, VsCode, XAMPP<br>
-                    Description: Built a web-based car rental management system. Features included vehicle listing, booking management, and rental history tracking, streamlining the rental process for both customers and administrators.
-                </p>
-            </li>
-        </ul>
-    </section>
-    
-    <section id="contact" class="container content">
-        <h2>Contact Information</h2>
-        <p>Email: <a href="mailto:aliarman45039@gmail.com">aliarman45039@gmail.com</a></p>
-        <p>Phone: (+88) 01774406256 (WhatsApp)</p>
-        <p>Location: Kuril, Dhaka, Bangladesh</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/mdaliarman12/" target="_blank">linkedin.com/in/mdaliarman12</a></p>
-        <p>GitHub: <a href="https://github.com/aliarman1" target="_blank">github.com/aliarman1</a></p>
-        <p>Facebook: <a href="https://www.facebook.com/mdaliarman01/" target="_blank">facebook.com/mdaliarman01</a></p>
-    </section>
-    
+            <!-- Skills Section -->
+            <section id="skills" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h2>Skills & Proficiencies</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>ERP & System Development</h3>
+                        <p>Custom ERP, Inventory, Accounting, Payroll, HRM, POS systems</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Hardware Integration</h3>
+                        <p>Biometric (ZKTeco) & RFID device integration</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Mobile Development</h3>
+                        <p>Flutter, Kotlin with API Integration</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Web Development</h3>
+                        <p>Laravel, React.js, PHP, JavaScript, MySQL</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>API Development</h3>
+                        <p>RESTful API Design & Integration</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>AI-Assisted Coding</h3>
+                        <p>Cursor, Windsurf, Claude Code, Codex CLI</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Server Management</h3>
+                        <p>Linux Server Management & Deployment</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Security</h3>
+                        <p>Authentication & Security (Laravel Sanctum)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    </div>
+                    <h2>Education</h2>
+                </div>
+                <div class="edu-grid">
+                    <div class="edu-card">
+                        <h3>B.Sc. in Computer Science and Engineering</h3>
+                        <div class="institution">Bangladesh Army University of Science & Technology</div>
+                        <div class="details">CGPA: 3.55/4.00 (2019-2023)</div>
+                        <div class="thesis">Thesis: Psychological Characteristic Disorder Classification - ML model to analyze and classify psychological disorders based on professional and geographical factors</div>
+                    </div>
+                    <div class="edu-card">
+                        <h3>Higher Secondary Certificate</h3>
+                        <div class="institution">Police Lines School and College, Rangpur</div>
+                        <div class="details">GPA: 5.00/5.00 (2017-2019) - Science</div>
+                    </div>
+                    <div class="edu-card">
+                        <h3>Secondary School Certificate</h3>
+                        <div class="institution">Domar Multilateral High School, Nilphamari</div>
+                        <div class="details">GPA: 5.00/5.00 (2016-2017) - Science</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications -->
+            <section id="certifications" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+                    </div>
+                    <h2>Certifications</h2>
+                </div>
+                <div class="tags">
+                    <span class="tag">Python Programming Training - Johnson IT Institute (2021)</span>
+                    <span class="tag">Cisco Certified Network Associate (CCNA) - eShikhon.com (2021)</span>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h2>Projects</h2>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Psychological Characteristic Disorder Classification</h3>
+                        <span class="year">2023</span>
+                        <div class="tools">
+                            <span class="tool">Python</span>
+                            <span class="tool">Machine Learning</span>
+                            <span class="tool">NLP</span>
+                        </div>
+                        <p>ML model to analyze and classify psychological disorders based on professional and geographical factors.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>AI Generated Content Prediction</h3>
+                        <span class="year">2023</span>
+                        <div class="tools">
+                            <span class="tool">Python</span>
+                            <span class="tool">NLP</span>
+                            <span class="tool">Jupyter</span>
+                        </div>
+                        <p>Machine learning model to predict AI-generated content using natural language processing techniques.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Handwritten Digit Detection</h3>
+                        <span class="year">2023</span>
+                        <div class="tools">
+                            <span class="tool">Python</span>
+                            <span class="tool">Keras</span>
+                            <span class="tool">TensorFlow</span>
+                        </div>
+                        <p>Neural network model to recognize handwritten digits with high accuracy.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Hotel Booking System</h3>
+                        <span class="year">2022</span>
+                        <div class="tools">
+                            <span class="tool">PHP</span>
+                            <span class="tool">MySQL</span>
+                            <span class="tool">JavaScript</span>
+                        </div>
+                        <p>Full-stack web application for hotel bookings with user authentication and room management.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Education Bank</h3>
+                        <span class="year">2022</span>
+                        <div class="tools">
+                            <span class="tool">Android</span>
+                            <span class="tool">Java</span>
+                            <span class="tool">MySQL</span>
+                        </div>
+                        <p>Android application for collaborative learning with resource sharing capabilities.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Car Rent Management</h3>
+                        <span class="year">2021</span>
+                        <div class="tools">
+                            <span class="tool">PHP</span>
+                            <span class="tool">MySQL</span>
+                            <span class="tool">CSS</span>
+                        </div>
+                        <p>Web-based car rental management system with booking and history tracking.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Achievements -->
+            <section id="achievements" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15l-2 5-9-9 9-9 9 9-9 9-2-5 2-5"/></svg>
+                    </div>
+                    <h2>Achievements</h2>
+                </div>
+                <div class="tags">
+                    <span class="tag">Champion - ROBAUST Intra University Robotics Contest (2023)</span>
+                    <span class="tag">Runners-Up - Intra University Programming Contest, ICPC Selection Round (2021)</span>
+                    <span class="tag">Champion - Marathon Contest BAUST 10th Batch (2020)</span>
+                    <span class="tag">Vice-President - BAUST Programming Club (2022-2023)</span>
+                </div>
+            </section>
+
+            <!-- Soft Skills -->
+            <section id="soft-skills" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h2>Soft Skills</h2>
+                </div>
+                <div class="tags">
+                    <span class="tag">Communication</span>
+                    <span class="tag">Teamwork</span>
+                    <span class="tag">Leadership</span>
+                    <span class="tag">Time Management</span>
+                    <span class="tag">Problem Solving</span>
+                    <span class="tag">Attention to Detail</span>
+                    <span class="tag">Adaptability</span>
+                    <span class="tag">Fast Learning</span>
+                    <span class="tag">Customer Service</span>
+                    <span class="tag">Coordination</span>
+                </div>
+            </section>
+
+            <!-- Languages -->
+            <section id="languages" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <h2>Languages</h2>
+                </div>
+                <div class="tags">
+                    <span class="tag">Bengali - Native</span>
+                    <span class="tag">English - Fluent</span>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <h2>Get In Touch</h2>
+                </div>
+                <div class="contact-grid">
+                    <a href="mailto:aliarman45039@gmail.com" class="contact-item">
+                        <div class="icon">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div class="info">
+                            <div class="label">Email</div>
+                            <div class="value">aliarman45039@gmail.com</div>
+                        </div>
+                    </a>
+                    <a href="tel:+8801774406256" class="contact-item">
+                        <div class="icon">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div class="info">
+                            <div class="label">Phone</div>
+                            <div class="value">+88 01774406256</div>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mdaliarman12/" target="_blank" class="contact-item">
+                        <div class="icon">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </div>
+                        <div class="info">
+                            <div class="label">LinkedIn</div>
+                            <div class="value">linkedin.com/in/mdaliarman12</div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/aliarman1" target="_blank" class="contact-item">
+                        <div class="icon">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        </div>
+                        <div class="info">
+                            <div class="label">GitHub</div>
+                            <div class="value">github.com/aliarman1</div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
     <footer>
-        <p>MD Ali Arman &copy; 2026</p>
+        <div class="social">
+            <a href="https://www.linkedin.com/in/mdaliarman12/" target="_blank" aria-label="LinkedIn">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="https://github.com/aliarman1" target="_blank" aria-label="GitHub">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/mdaliarman01/" target="_blank" aria-label="Facebook">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.2.686.686.235 235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+        </div>
+        <p>&copy; 2026 Md. Ali Arman. All rights reserved.</p>
     </footer>
 
-    <!-- Scroll to Top Button -->
     <button id="scrollToTop" aria-label="Scroll to top">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
-        </svg>
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
     </button>
 
     <script>
-        // Scroll to Top functionality
         const scrollToTopBtn = document.getElementById('scrollToTop');
-        
-        // Show button when page is scrolled down
+
         window.addEventListener('scroll', function() {
             if (window.scrollY > 300) {
                 scrollToTopBtn.classList.add('show');
@@ -563,8 +1125,7 @@
                 scrollToTopBtn.classList.remove('show');
             }
         });
-        
-        // Scroll to top when button is clicked
+
         scrollToTopBtn.addEventListener('click', function() {
             window.scrollTo({
                 top: 0,
